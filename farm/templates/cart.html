@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+
+    <table id="roster" class="table table-bordered">
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </thead>
+        <tbody class="table-light" scope="row"></tbody>
+        <tbody>
+            {% for s in carti %}
+            <tr>
+                <td>{{ s[0] }}</td>
+                <td>{{ s[1] }}</td>
+                <td>{{ s[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> 
+
+
+{% endblock %}

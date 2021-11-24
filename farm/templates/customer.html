@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="col"><a class="btn btn-info" href="/cart">Go to cart</a></div>
+<div class="alert alert-primary" role="alert">
+    Available products in our store
+</div>
+
+
+<div class="row">
+{% for x in box %}
+
+<div class="card col-6 col-sm-4">
+    <img src="images/ribs.jpeg" style="width: 100%; height: 180;">
+    <h2>
+        {{x[0]}}
+    </h2>
+    <h4 class="price">${{x[1]}}</h4>
+    <button type="button" class="btn btn-primary" >Add to Cart</button>
+    <h6>Description</h6>
+    <p class="alert alert-primary" role="alert">{{x[2]}}</p>
+</div>
+
+
+{% endfor %}
+</div>
+<p class="container">
+    {{ removed }}
+</p> 
+
+{% endblock %}
